@@ -1,0 +1,100 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbjxyrapa8c61"]
+
+[ext_resource type="Script" path="res://screens/design_game_screen/design_game_screen.gd" id="1_iayer"]
+
+[node name="DesignGameScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iayer")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -157.5
+offset_right = 157.5
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Design Game Screen"
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 2
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Scene" type="Panel" parent="TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Scene"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HSplitContainer" type="HSplitContainer" parent="TabContainer/Scene/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Left" type="VSplitContainer" parent="TabContainer/Scene/MarginContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Display" type="ColorRect" parent="TabContainer/Scene/MarginContainer/HSplitContainer/Left"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Content" type="ColorRect" parent="TabContainer/Scene/MarginContainer/HSplitContainer/Left"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Right" type="VSplitContainer" parent="TabContainer/Scene/MarginContainer/HSplitContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Tree" type="ColorRect" parent="TabContainer/Scene/MarginContainer/HSplitContainer/Right"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Tree" type="Tree" parent="TabContainer/Scene/MarginContainer/HSplitContainer/Right/Tree"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inspector" type="ColorRect" parent="TabContainer/Scene/MarginContainer/HSplitContainer/Right"]
+custom_minimum_size = Vector2(0, 256)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Schema" type="Panel" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Script" type="Panel" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Data" type="Panel" parent="TabContainer"]
+visible = false
+layout_mode = 2
